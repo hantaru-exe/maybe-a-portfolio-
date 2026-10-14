@@ -17,8 +17,6 @@ Conectar duas redes diferentes através de um roteador e permitir a comunicaçã
 | Roteador g0/1 | 192.168.20.1 | - |
 
 ## Comandos usados (roteador)
-
-## Comandos usados (roteador)
 ```
 enable
 configure terminal
@@ -32,3 +30,15 @@ no shutdown
 exit
 write memory
 ```
+
+## Teste
+Ping do PC0 (192.168.10.2) para o PC1 (192.168.20.2): **4 pacotes enviados, 4 recebidos, 0% de perda.**
+
+## O que aprendi
+- Como configurar IP em interfaces de roteador.
+- O que é gateway e por que ele é necessário para comunicação entre redes.
+- Como o roteador encaminha pacotes entre redes diretamente conectadas.
+
+## Problema encontrado e solução
+O switch ainda estava com a VLAN 10 do Lab 1 configurada, isolando o PC0. 
+Solução: resetar o switch com `erase startup-config` e `reload`.
