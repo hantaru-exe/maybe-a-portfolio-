@@ -13,7 +13,22 @@ Conectar duas redes diferentes através de um roteador e permitir a comunicaçã
 |-------------|-----|---------|
 | PC0 | 192.168.10.2 | 192.168.10.1 |
 | PC1 | 192.168.20.2 | 192.168.20.1 |
-| Roteador g0/0 | 192.168.10.1 | 255.255.255.0 |
-| Roteador g0/1 | 192.168.20.1 | 255.255.255.0 |
+| Roteador g0/0 | 192.168.10.1 | - |
+| Roteador g0/1 | 192.168.20.1 | - |
 
 ## Comandos usados (roteador)
+
+## Comandos usados (roteador)
+```
+enable
+configure terminal
+interface g0/0
+ip address 192.168.10.1 255.255.255.0
+no shutdown
+exit
+interface g0/1
+ip address 192.168.20.1 255.255.255.0
+no shutdown
+exit
+write memory
+```
